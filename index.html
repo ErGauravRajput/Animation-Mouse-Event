@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <title>Mouse Event Example</title>
+        <style>
+            *{
+                padding:0;
+                margin:0;
+                box-sizing:border-box;
+            }
+            body{
+                display:flex;
+                justify-content: center;
+                align-items:center;
+                height:100vh;
+                background-color:#1b1b1b;
+            }
+            section{
+                text-align:center;
+            }
+            button{
+                font-size:1.5rem;
+                background-color:#f5ee62;
+                padding:0.7rem 1.5rem;
+                border-radius:10rem;
+                cursor:pointer;
+                transition:all 0.3s linear;
+                &:hover{
+                    background-color:transparent;
+                    color:#f5ee62;
+                    box-shadow: inset 0 0 0 0.2rem #f5ee62;
+                }
+            }
+            .rectangle{
+                width:35rem;
+                height:35rem;
+                background:#000;
+                border-radius:1rem;
+                margin-bottom:3.2rem;
+                transition:all 0.7s linear;
+                box-shadow:rgba(239,247,87,0.2) 0px 8px 24px;
+            }
+            .addTransition{
+                border-radius:50%;
+            }
+            .addTransition3{
+                border-radius:50%;
+                background-color:#f5ee62;
+                translate:-30rem 0;
+            }
+            .addTransition4{
+                border-radius:50%;
+                background-color:#f5ee62;
+                translate:30rem 0;
+
+            }
+            .addTransition5{
+                translate:-30rem 0;
+            }
+            .addTransition6{
+                border-radius:0%;
+                background-color:#f5ee62;
+                translate:0rem 0;
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            <div class="rectangle"></div>
+            <button id="btn">Click Me</button>
+        </section>
+        <script>
+            let mybtn=document.getElementById("btn");
+            let rect=document.querySelector(".rectangle");
+
+            const handleMouseEvent = () => {
+                console.log("tmne click kr diya");
+                rect.style.backgroundColor="#f5ee62";
+            };
+
+            const handleMouseEvent2=()=>{
+                rect.classList.add("addTransition");
+            };
+
+            const handleMouseEvent3=()=>{
+                rect.classList.add("addTransition3");
+            };
+
+            const handleMouseEvent4=()=>{
+                rect.classList.add("addTransition4");
+            };
+            
+            const handleMouseEvent5=()=>{
+                rect.classList.add("addTransition5");
+            };
+            
+            const handleMouseEvent6=()=>{
+                rect.classList.add("addTransition6");
+            };
+            
+            mybtn.addEventListener("click",handleMouseEvent);
+            mybtn.addEventListener("dblclick",handleMouseEvent2);
+            rect.addEventListener("mouseover",handleMouseEvent3);
+            rect.addEventListener("mouseout",handleMouseEvent4);
+            rect.addEventListener("mousedown",handleMouseEvent5);
+            rect.addEventListener("mouseup",handleMouseEvent6);
+
+
+        </script>
+    </body>
+</html>
